@@ -4,6 +4,7 @@ import { FaCartPlus } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import './items.css'
 import ItemContext from '../context/FoodContext'
+import Cart_Module from '../cart/Cart_Module';
 
 
 function Items() {
@@ -45,6 +46,9 @@ function Items() {
 
   return (
     <div className='items-con'>
+      {
+        <Cart_Module/>
+      }
       <div className="items">
         {
           itemData.map((item) => {
