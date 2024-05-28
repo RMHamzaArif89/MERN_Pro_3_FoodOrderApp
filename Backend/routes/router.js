@@ -92,7 +92,7 @@ router.get('/foodItems',async(req,res)=>{
 
 
 //Get the single Data
-router.get('/foodItems/:id',async(req,res)=>{
+router.get('/foodItem/:id',async(req,res)=>{
  try{
   const _id=req.params.id
   let Data=await food_Items.findById({_id})
@@ -114,19 +114,19 @@ router.get('/foodItems/:id',async(req,res)=>{
 
 
 //Delete the data by id
-router.delete('/deleteProduct/:id',async(req,res)=>{
+router.delete('/deleteItem/:id',async(req,res)=>{
  try{
   const _id=req.params.id
   
   await food_Items.findByIdAndDelete({_id})
   
 
-   return res.status(200).json({msg:'success'})
+   return res.status(200).json({msg:'deleted the item'})
  
  }
  catch(e){
   res.status(400).json({
-    msg:e
+    msg:'could not process the delete request '
   })
  }
 })
