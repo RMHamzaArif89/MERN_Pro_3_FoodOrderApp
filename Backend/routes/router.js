@@ -37,26 +37,22 @@ const upload = multer({ storage:Storage })
 
 
 
-router.post('/createItem',upload.single('img'),async(req,res)=>{
- 
+router.post('/createItems',upload.single('img'),async(req,res)=>{
+ console.log(req.file)
    
     try{
       
-     const data=await food_Items.find({name:req.body.name})
-     if(data){
-      return res.status(400).json({msg:'product item already exist'})
-     }
         const foodData=new food_Items({
             name:req.body.name,
             price:req.body.price,
             img:req.file.filename,
             detail:req.body.detail,
-            date:req.body.date
+            size:req.body.size
         })
       
        const create= await food_Items.create(foodData)
      if(create){
-      return   res.status(200).json({msg:'Food Item has been created'})
+      return   res.status(200).json({msg:'Food Item has been created',data:foodData})
      }
         
     }
@@ -74,12 +70,14 @@ router.post('/createItem',upload.single('img'),async(req,res)=>{
 
 //Get the data
 router.get('/foodItems',async(req,res)=>{
+  
  try{
   let Data=await food_Items.find({})
   if(Data){
    return  res.status(200).json({data:Data,msg:'Data has been collected from the backend'})
 
   }
+
     return res.status(400).json({msg:'data not found || wrong inoformation given'})
   
  }

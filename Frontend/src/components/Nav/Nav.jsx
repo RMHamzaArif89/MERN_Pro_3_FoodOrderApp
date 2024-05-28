@@ -1,14 +1,16 @@
 import React from 'react'
 import { FcHome } from "react-icons/fc";
 import { IoIosAddCircleOutline } from "react-icons/io";
+import './nav.css'
+import {NavLink} from 'react-router-dom'
 
 
 function Nav() {
   return (
     <div className='nav'>
         <ul>
-            <li><FcHome/><NavLink to="/">Home</NavLink></li>
-            <li><IoIosAddCircleOutline/><NavLink to="/form">Add Item</NavLink></li>
+            <li><NavLink  className="navlink" to="/">Home</NavLink><FcHome/></li>
+            <li><NavLink className='navlink' to="/form">Add Item</NavLink><IoIosAddCircleOutline/></li>
         </ul>
 
 

@@ -25,7 +25,7 @@ const foodItems= new mongoose.Schema({
         // required:true
 
     },
-    data:{
+    size:{
         type:String
     }
 

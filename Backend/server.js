@@ -31,6 +31,6 @@ require('./db/conn.js')
 //middleware for the router
 app.use('/api',router)
 
-app.listen(3000,()=>{
+app.listen(5000,()=>{
     console.log('port is listening')
 })
