@@ -8,6 +8,7 @@ export const ContextProvider=({children})=>{
   const  [itemData,setItemData]=useState([])
   const [showModal,setShowModal]=useState(false)
   const [cartItems,setCartItems]=useState([])
+  const [showOrderForm,setShowOrderForm]=useState(false)
     
 const totalCartItems=()=>{
   return cartItems.length;
@@ -109,7 +110,8 @@ const addToCart = (_id) => {
 
   return(
     <ItemContext.Provider value={{itemData,getData,showModal,setShowModal,addItem,cartItems
-    ,addToCart,removeFromCart,totalPrice,clearCart,totalCartItems}}>
+    ,addToCart,removeFromCart,totalPrice,clearCart,totalCartItems,
+    showOrderForm,setShowOrderForm}}>
     {children}
 </ItemContext.Provider>
   )

@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom';
 import './items.css'
 import ItemContext from '../context/FoodContext'
 import Cart_Module from '../cart/Cart_Module';
+import Order from '../order/Order';
 
 
 function Items() {
-  const { itemData, getData ,showModal,setShowModal,addItem} = useContext(ItemContext)
+  const { itemData, getData ,showModal,setShowModal,addItem,showOrderForm} = useContext(ItemContext)
 
 
 
@@ -51,6 +52,9 @@ function Items() {
     <div className='items-con'>
       {
         showModal&&<Cart_Module/>
+      }
+      {
+        showOrderForm&&<Order/>
       }
       <div className="items">
         {

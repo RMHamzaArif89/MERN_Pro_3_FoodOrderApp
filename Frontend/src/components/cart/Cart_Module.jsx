@@ -6,7 +6,7 @@ import { AiFillMinusCircle } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
 
 function Cart_Module() {
-    const {cartItems,setShowModal,addToCart,removeFromCart,totalPrice}=useContext(ItemContext)
+    const {cartItems,setShowModal,addToCart,removeFromCart,totalPrice,setShowOrderForm}=useContext(ItemContext)
   return (
     <div className='cart'>
     <div className="cart-close" onClick={()=>{setShowModal(pre=>!pre)}}><ImCross/></div>
@@ -39,7 +39,7 @@ function Cart_Module() {
              <div className="cart-total-price">{totalPrice()}$</div>
            </div>
      
-           <div className="order-btn">Order Now</div>
+           <div className="order-btn" onClick={()=>{setShowOrderForm(pre=>!pre),setShowModal(pre=>!pre)}}>Order Now</div>
     </div>
     </div>
   )
