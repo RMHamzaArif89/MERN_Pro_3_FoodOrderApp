@@ -8,7 +8,7 @@ import Cart_Module from '../cart/Cart_Module';
 
 
 function Items() {
-  const { itemData, getData } = useContext(ItemContext)
+  const { itemData, getData ,showModal,setShowModal,addItem} = useContext(ItemContext)
 
 
 
@@ -44,10 +44,13 @@ function Items() {
   }
 
 
+
+
+
   return (
     <div className='items-con'>
       {
-        <Cart_Module/>
+        showModal&&<Cart_Module/>
       }
       <div className="items">
         {
@@ -62,7 +65,7 @@ function Items() {
                 {/* <div className="item-detail"></div> */}
                 <div className="item-edit"><Link className='edit' to={`/updateForm/${item._id}`}>update</Link></div>
                 <div className="delete" onClick={() => deleteItem(item._id)}>delete<MdDelete /> </div>
-                <div className="add-cart">Add to Cart <FaCartPlus /> </div>
+                <div className="add-cart" onClick={()=>{setShowModal(pre=>!pre),addItem(item)}}>Add to Cart <FaCartPlus /> </div>
                </div>
               
               </div>

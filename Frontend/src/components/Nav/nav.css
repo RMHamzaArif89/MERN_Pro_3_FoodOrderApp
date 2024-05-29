@@ -3,8 +3,14 @@
     height: 60px;
     display: flex;
     align-items: center;
-    /* justify-content: space-around; */
+    justify-content: space-around;
     background: #000;
+}
+.logo-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 28px;
+
 }
 .nav ul{
     width: 30%;
@@ -27,4 +33,30 @@
 .nav ul li .navlink{
     text-decoration: none;
     color: white;
+}
+
+
+.nav-cart-total{
+    
+    font-size: 1.3rem;
+    color: white;
+    font-family: serif;
+    gap: 0.3rem;
+    position: relative;
+    background: rgb(15, 15, 15);
+    width: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart-value{
+    font-size: 1rem;
+    position: absolute;
+    top: 0.3rem;
+    left: 2.2rem;
+    padding: 1px 3px;
+    background: red;
+    border-radius: 8px;
+    
 }
