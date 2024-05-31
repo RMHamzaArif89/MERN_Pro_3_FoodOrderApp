@@ -6,6 +6,7 @@ const ItemContext = createContext(null);
 
 export const ContextProvider=({children})=>{
   const  [itemData,setItemData]=useState([])
+  const  [orderData,setOrderData]=useState([])
   const [showModal,setShowModal]=useState(false)
   const [cartItems,setCartItems]=useState([])
   const [showOrderForm,setShowOrderForm]=useState(false)
@@ -37,12 +38,39 @@ const totalCartItems=()=>{
           console.log('data not found',e)
         }
       }
+
+
+
+      //get orders data
+    const getOrderData=async()=>{
+      try{
+        const response=await fetch('http://localhost:5000/api/orders',{
+          method:'GET',
+      
+      })
+      
+       if(response.ok){
+        const res= await response.json()
+        
+        
+        
+    setOrderData(res.data)
+  
+      
+       }
+          }
+      
+        catch(e){
+          console.log('data not found',e)
+        }
+      }
     
 
 
 
     useEffect(()=>{
-      getData()
+      getData(),
+      getOrderData()
     },[])
 
 
@@ -111,7 +139,8 @@ const addToCart = (_id) => {
   return(
     <ItemContext.Provider value={{itemData,getData,showModal,setShowModal,addItem,cartItems
     ,addToCart,removeFromCart,totalPrice,clearCart,totalCartItems,
-    showOrderForm,setShowOrderForm}}>
+    showOrderForm,setShowOrderForm,
+    orderData,getOrderData}}>
     {children}
 </ItemContext.Provider>
   )

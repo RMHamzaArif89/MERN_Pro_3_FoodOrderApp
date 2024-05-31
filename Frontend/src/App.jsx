@@ -8,6 +8,8 @@ import Items from './components/items/Items'
 import Form from './components/form/Form'
 import Header from './components/Header'
 import Nav from './components/Nav/Nav'
+// import OrderItems from './components/order/OrderItems'
+import OrderItems from './components/order/OrderItems'
 
 function App() {
   
@@ -21,6 +23,7 @@ function App() {
           <Route index element={<Items />} />
           <Route path="/" element={<Items />} />
           <Route path="form" element={<Form />} />
+          <Route path="orders" element={<OrderItems />} />
       
       </Routes>
     </BrowserRouter>

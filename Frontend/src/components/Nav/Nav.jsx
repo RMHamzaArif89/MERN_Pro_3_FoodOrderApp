@@ -5,6 +5,7 @@ import './nav.css'
 import {NavLink} from 'react-router-dom'
 import ItemContext from '../context/FoodContext';
 import { BsCart4 } from "react-icons/bs";
+import { IoFastFoodOutline } from "react-icons/io5";
 
 
 function Nav() {
@@ -18,6 +19,7 @@ const{totalCartItems}=useContext(ItemContext)
         <ul>
             <li><NavLink  className="navlink" to="/">Home</NavLink><FcHome/></li>
             <li><NavLink className='navlink' to="/form">Add Item</NavLink><IoIosAddCircleOutline/></li>
+            <li><NavLink className='navlink' to="/orders">Order Items</NavLink><IoFastFoodOutline/></li>
         </ul>
 
       
