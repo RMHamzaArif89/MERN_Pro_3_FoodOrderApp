@@ -46,7 +46,7 @@ const response=await fetch(`http://localhost:5000/api/createOrder`,{
   },
   body:JSON.stringify(values)
 })
-console.log(response)
+// console.log(response)
 if(response.ok){
 
 setValues({
@@ -58,7 +58,7 @@ setValues({
   street:'',
 })
 console.log(response.data)
-navigate('/OrderItems')
+navigate('/orders')
 }
   }
 

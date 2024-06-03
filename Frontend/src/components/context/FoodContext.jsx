@@ -69,7 +69,10 @@ const totalCartItems=()=>{
 
 
     useEffect(()=>{
-      getData(),
+      getData()
+    },[])
+    useEffect(()=>{
+      console.log('gtorderd')
       getOrderData()
     },[])
 
