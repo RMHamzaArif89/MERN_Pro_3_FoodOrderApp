@@ -4,6 +4,7 @@ const cors=require('cors')
 // const session=require('express-session')
 const bodyParser = require("body-parser");
 const router=require('./routes/router')
+const userRouter=require('./routes/userRouter')
 
 
 
@@ -30,6 +31,7 @@ require('./db/conn.js')
 
 //middleware for the router
 app.use('/api',router)
+app.use('/api',userRouter)
 
 app.listen(5000,()=>{
     console.log('port is listening')
