@@ -10,6 +10,9 @@ import Header from './components/Header'
 import Nav from './components/Nav/Nav'
 // import OrderItems from './components/order/OrderItems'
 import OrderItems from './components/order/OrderItems'
+import Login from './components/register/Login'
+import Signup from './components/register/Signup';
+import Logout from './components/register/Logout';
 
 function App() {
   
@@ -20,10 +23,13 @@ function App() {
     <Nav/>
       <Routes>
         
-          <Route index element={<Items />} />
+          <Route index element={<Login />} />
           <Route path="/" element={<Items />} />
           <Route path="form" element={<Form />} />
           <Route path="orders" element={<OrderItems />} />
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="logout" element={<Logout />} />
       
       </Routes>
     </BrowserRouter>

@@ -7,12 +7,17 @@ const bodyParser=require('body-parser')
 
 const multer=require('multer')
 const path=require('path')
+const userAuth=require('../userAuth')
+
 
 
 
 //this is middleWare use to encode the form&body request value //example req.body from form
 router.use(bodyParser.urlencoded({extended:false}));
 router.use(express.json())
+
+//for authenticate user
+router.use(userAuth)
 
 
 //for upload file

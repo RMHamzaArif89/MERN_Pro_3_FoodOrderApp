@@ -3,10 +3,15 @@ import {useNavigate} from 'react-router-dom'
 
 
 
-function Login() {
+function Signup() {
     const [values,setValues]=useState({
+        name:'',
         email:'',
-        password:''
+        password:'',
+        cell:'',
+        address:'',
+
+
 
     })
 
@@ -32,7 +37,7 @@ function Login() {
       console.log('login',values)
       e.preventDefault();
  try{
-  const response=await fetch('http://localhost:5000/api/login',{
+  const response=await fetch('http://localhost:5000/api/signup',{
     method:'POST',
     headers:{
   "Content-Type":'application/json'
@@ -45,7 +50,10 @@ console.log(response)
   
   setValues({
     email:'',
-    password:''
+    password:'',
+    address:'',
+    name:'',
+    cell:''
 })
 navigate("/")
  }else{
@@ -62,6 +70,22 @@ navigate("/")
    <>
    <form onSubmit={(e)=>{handleLogin(e)}} className='container' >
 
+   <div className="mb-3">
+    <label htmlFor="exampleInputname" className="form-label">Name</label>
+    <input value={values.name} name='name' onChange={(e)=>{handleChange(e)}} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+  </div>
+
+   <div className="mb-3">
+    <label htmlFor="exampleInputCell" className="form-label">Cell</label>
+    <input value={values.cell} name='cell' onChange={(e)=>{handleChange(e)}} type="number" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+  </div>
+
+   <div className="mb-3">
+    <label htmlFor="exampleInputaddress" className="form-label">Address</label>
+    <input value={values.address} name='address' onChange={(e)=>{handleChange(e)}} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+  </div>
+
+  
 
 
   <div className="mb-3">
@@ -75,10 +99,10 @@ navigate("/")
     <input value={values.password} name='password' onChange={(e)=>{handleChange(e)}} type="password" className="form-control" id="exampleInputPassword1"/>
   </div>
 
-  <button type="submit" className="btn btn-primary">Login</button>
+  <button type="submit" className="btn btn-primary">Signup</button>
 </form>
    </>
   )
 }
 
-export default Login
+export default Signup
