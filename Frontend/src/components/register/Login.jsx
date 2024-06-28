@@ -60,7 +60,7 @@ navigate("/")
 
   return (
    <>
-   <form onSubmit={(e)=>{handleLogin(e)}} className='container' >
+   <form onSubmit={(e)=>{handleLogin(e)}} className='form-container' >
 
 
 

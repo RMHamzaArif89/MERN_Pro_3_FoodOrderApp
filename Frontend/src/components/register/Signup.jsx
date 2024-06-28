@@ -68,7 +68,7 @@ navigate("/")
 
   return (
    <>
-   <form onSubmit={(e)=>{handleLogin(e)}} className='container' >
+   <form onSubmit={(e)=>{handleLogin(e)}} className='form-container' >
 
    <div className="mb-3">
     <label htmlFor="exampleInputname" className="form-label">Name</label>

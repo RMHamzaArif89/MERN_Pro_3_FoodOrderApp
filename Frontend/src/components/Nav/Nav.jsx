@@ -20,6 +20,9 @@ const{totalCartItems}=useContext(ItemContext)
             <li><NavLink  className="navlink" to="/">Home</NavLink><FcHome/></li>
             <li><NavLink className='navlink' to="/form">Add Item</NavLink><IoIosAddCircleOutline/></li>
             <li><NavLink className='navlink' to="/orders">Order Items</NavLink><IoFastFoodOutline/></li>
+            <li><NavLink className='navlink' to="/login">Login</NavLink></li>
+            <li><NavLink className='navlink' to="/signup">Sign-up</NavLink></li>
+            <li><NavLink className='navlink' to="/logout">Logout</NavLink></li>
         </ul>
 
       
