@@ -46,7 +46,8 @@ function Form() {
             "http://localhost:5000/api/createItems",
             formData,{
             headers:{
-              "Content-Type":"multipart/form-data"
+              "Content-Type":"multipart/form-data",
+              credentials: 'include'
             }
             }
             ).then(

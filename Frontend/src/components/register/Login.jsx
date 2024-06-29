@@ -48,7 +48,7 @@ function Login() {
                     email: '',
                     password: ''
                 })
-                navigate("/")
+                navigate("/items")
             } else {
                 console.log('login error')
             }

@@ -20,6 +20,7 @@ const totalCartItems=()=>{
       try{
         const response=await fetch('http://localhost:5000/api/foodItems',{
           method:'GET',
+          credentials: 'include'
       
       })
       
@@ -31,6 +32,8 @@ const totalCartItems=()=>{
     setItemData(res.data)
   
       
+       }else{
+        setItemData([])
        }
           }
       
@@ -46,6 +49,7 @@ const totalCartItems=()=>{
       try{
         const response=await fetch('http://localhost:5000/api/orders',{
           method:'GET',
+          credentials: 'include'
       
       })
       
@@ -57,6 +61,8 @@ const totalCartItems=()=>{
     setOrderData(res.data)
   
       
+       }else{
+        setOrderData([])
        }
           }
       

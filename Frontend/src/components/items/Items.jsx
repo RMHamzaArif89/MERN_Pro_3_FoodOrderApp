@@ -17,7 +17,8 @@ function Items() {
 
 
   useEffect(() => {
-    getData()
+    getData(),
+    itemData
   }, [])
 
 
@@ -27,7 +28,8 @@ function Items() {
       const response = await fetch(`http://localhost:5000/api/deleteItem/${id}`, {
         method: 'DELETE',
         headers: {
-          "Content-Type": 'application/json'
+          "Content-Type": 'application/json',
+          credentials: 'include'
         },
         // body:JSON.stringify(values)
       })
@@ -58,23 +60,24 @@ function Items() {
       }
       <div className="items">
         {
-          itemData.map((item) => {
-            // cosnt{name,email,age}=item
-            return (
-              <div className="item-card">
-                <img src={'http://localhost:5000/' + item.img} className='item-img' />
-               <div className="item-card-text">
-               <div className="item-name">{item.name}</div>
-                <div className="item-price">price:{item.price}$</div>
-                {/* <div className="item-detail"></div> */}
-                <div className="item-edit"><Link className='edit' to={`/updateForm/${item._id}`}>update</Link></div>
-                <div className="delete" onClick={() => deleteItem(item._id)}>delete<MdDelete /> </div>
-                <div className="add-cart" onClick={()=>{setShowModal(pre=>!pre),addItem(item)}}>Add to Cart <FaCartPlus /> </div>
-               </div>
-              
-              </div>
-            )
-          })
+    itemData?itemData.map((item) => {
+      // cosnt{name,email,age}=item
+      return (
+        <div className="item-card">
+          <img src={'http://localhost:5000/' + item.img} className='item-img' />
+         <div className="item-card-text">
+         <div className="item-name">{item.name}</div>
+          <div className="item-price">price:{item.price}$</div>
+          {/* <div className="item-detail"></div> */}
+          <div className="item-edit"><Link className='edit' to={`/updateForm/${item._id}`}>update</Link></div>
+          <div className="delete" onClick={() => deleteItem(item._id)}>delete<MdDelete /> </div>
+          <div className="add-cart" onClick={()=>{setShowModal(pre=>!pre),addItem(item)}}>Add to Cart <FaCartPlus /> </div>
+         </div>
+        
+        </div>
+      )
+    }):<h1 style={{color:'red'}}>Login First</h1>
+    
         }
       </div >
 
