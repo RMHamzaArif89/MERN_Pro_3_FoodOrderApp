@@ -18,6 +18,7 @@ router.use(express.json())
 
 
 router.post('/signup',async(req,res)=>{
+  console.log('signup')
  
     try{
       const emailExist=await Users.findOne({email:req.body.email})

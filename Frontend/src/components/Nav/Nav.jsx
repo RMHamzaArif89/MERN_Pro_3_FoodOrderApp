@@ -17,7 +17,7 @@ const{totalCartItems}=useContext(ItemContext)
       <img src="/images/logo1.jpg" className="logo-img" alt="" />
     
         <ul>
-            <li><NavLink  className="navlink" to="/">Home</NavLink><FcHome/></li>
+            <li><NavLink  className="navlink" to="/items">Home</NavLink><FcHome/></li>
             <li><NavLink className='navlink' to="/form">Add Item</NavLink><IoIosAddCircleOutline/></li>
             <li><NavLink className='navlink' to="/orders">Order Items</NavLink><IoFastFoodOutline/></li>
             <li><NavLink className='navlink' to="/login">Login</NavLink></li>

@@ -20,7 +20,6 @@ app.use(cors(corsOptions))
 //for upload file
 app.use(express.static('upload'))
 
-
 //this is middleWare use to encode the form&body request value //example req.body from form
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.json())
@@ -30,8 +29,9 @@ app.use(express.json())
 require('./db/conn.js')
 
 //middleware for the router
-app.use('/api',router)
 app.use('/api',userRouter)
+app.use('/api',router)
+
 
 app.listen(5000,()=>{
     console.log('port is listening')

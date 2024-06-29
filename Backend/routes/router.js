@@ -45,7 +45,7 @@ const upload = multer({ storage:Storage })
 
 
 router.post('/createItems',upload.single('img'),async(req,res)=>{
-//  console.log(req.file)
+ console.log(req.file)
    
     try{
       
